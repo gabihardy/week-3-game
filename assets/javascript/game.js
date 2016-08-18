@@ -6,6 +6,9 @@ String.prototype.replaceAt=function(index, character) {
 $(document).ready(function() {
 	var wins = 0;
 	var losses = 0;
+
+		var correctGuesses = [];
+		var incorrectGuesses = [];
 	console.log("fdsgfdfd");
 
 	$("#game").hide();
@@ -21,7 +24,7 @@ $(document).ready(function() {
 
 		var hiddenWord = "";
 		for (var i = 0; i < selectedWord.length; i++) {
-			hiddenWord += "?";
+			hiddenWord += "-";
 		}
 
 
@@ -32,8 +35,8 @@ $(document).ready(function() {
 		var numCorrect = 0;
 		var selectedLetter = "";
 
-		var correctGuesses = [];
-		var incorrectGuesses = [];
+		correctGuesses = [];
+		incorrectGuesses = [];
 			$("#correctGuesses").text(correctGuesses);
 			$("#incorrectGuesses").text(incorrectGuesses);
 
