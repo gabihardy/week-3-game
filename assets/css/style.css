@@ -1,0 +1,17 @@
+@font-face {
+font-family: terminator real nfi;
+src: url("fonts/terminator real nfi.otf") format("opentype");
+}
+
+@font-face {
+font-family: terminator real nfi;
+font-weight: bold;
+src: url("fonts/terminator real nfi.otf") format("opentype");
+}
+body{
+	text-align: center;
+}
+
+h1{
+    font-family: 'terminator real nfi' , terminator real nfi;
+}
