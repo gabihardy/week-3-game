@@ -1,19 +1,34 @@
 
 @font-face { font-family: Delicious; src: url('../fonts/terminator.otf'); } 
 
-body {
-	text-align: center;
-	font-family: Delicious;
- 
-  background: url(../images/bg.jpg) no-repeat center center fixed; 
+html {
+	background-color: #000;
+	  background: url(../images/bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: #999;
+
+
+
+}
+
+body {
+	text-align: center;
+	font-family: Delicious;
+	background-color: transparent;
+	color: #ecf0f1;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
 }
 
 h1 {
 	font-size: 6em;
+}
 
+h1, h2, h3 {
+	  color: #ecf0f1;
 }

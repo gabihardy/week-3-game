@@ -7,9 +7,8 @@ $(document).ready(function() {
 	var wins = 0;
 	var losses = 0;
 
-		var correctGuesses = [];
-		var incorrectGuesses = [];
-	console.log("fdsgfdfd");
+	var correctGuesses = [];
+	var incorrectGuesses = [];
 
 	$("#game").hide();
 
@@ -22,11 +21,12 @@ $(document).ready(function() {
 		var randomIndex = Math.floor(Math.random() * words.length); 
 		var selectedWord = words[randomIndex];
 
+		console.log(selectedWord);
+
 		var hiddenWord = "";
 		for (var i = 0; i < selectedWord.length; i++) {
 			hiddenWord += "-";
 		}
-
 
 		$("#hiddenWord").text(hiddenWord);
 
@@ -37,15 +37,14 @@ $(document).ready(function() {
 
 		correctGuesses = [];
 		incorrectGuesses = [];
-			$("#correctGuesses").text(correctGuesses);
-			$("#incorrectGuesses").text(incorrectGuesses);
+		$("#correctGuesses").text(correctGuesses);
+		$("#incorrectGuesses").text(incorrectGuesses);
 
 		$("#enter").click(function (e) {
 			e.preventDefault();
 
 			selectedLetter = $("#guess").val();
-
-			console.log(selectedLetter);
+			selectedLetter = selectedLetter.toLowerCase();
 
 			// correct
 			if (selectedWord.indexOf(selectedLetter) > -1) {
@@ -59,12 +58,9 @@ $(document).ready(function() {
 
 					for (var i = 0; i < hiddenWord.length; i++) {
 						if (selectedWord.charAt(i) == selectedLetter){
-							console.log('aoeu');
-
 							hiddenWord = hiddenWord.replaceAt(i, selectedLetter);
 							numCorrect ++;
 							letterInWord = true;
-
 						}
 					}
 
@@ -73,10 +69,7 @@ $(document).ready(function() {
 					}
 
 					$("#hiddenWord").text(hiddenWord);
-
 				}
-
-
 			}
 			// fail
 			else {
@@ -96,17 +89,21 @@ $(document).ready(function() {
 			$("#correctGuesses").text(correctGuesses);
 			$("#incorrectGuesses").text(incorrectGuesses);
 			$('#guess').val('');
+			
 
 			if (numFails === maxFails){
+				losses ++;
+				$('#losses').text(losses);
+
 				alert('You are terminated.');
+				$("#start").click();
 			}
 			else if (numCorrect === selectedWord.length){
-				alert('You have stopped Judgement Day!!')
-
-
+				wins ++;
+				$('#wins').text(wins);
+				alert('You have stopped Judgement Day!!');
+				$("#start").click();
 			}
-
-
 		});
 	});
 });
