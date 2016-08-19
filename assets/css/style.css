@@ -33,9 +33,12 @@ h1, h2, h3 {
 	  color: #ecf0f1;
 }
 
-@media only screen and (max-width: : 768px) {
+@media only screen and (max-width: 768px) {
 	h1 {
 		font-size: 2em;		
+	}
+	h2 {
+		font-size: 1.5em;
 	}
 
 }
